@@ -1,4 +1,4 @@
-package com.afei.creamf.imageloader.ImageDetails.Interface;
+package com.afei.creamf.quickimageloader.Interface;
 
 import android.graphics.Bitmap;
 

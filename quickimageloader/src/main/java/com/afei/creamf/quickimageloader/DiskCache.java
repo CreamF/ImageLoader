@@ -1,11 +1,11 @@
-package com.afei.creamf.imageloader.ImageDetails;
+package com.afei.creamf.quickimageloader;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 
-import com.afei.creamf.imageloader.ImageDetails.Interface.ImageCache;
-import com.afei.creamf.imageloader.ImageDetails.Utils.CloseUtils;
+import com.afei.creamf.quickimageloader.Interface.ImageCache;
+import com.afei.creamf.quickimageloader.Utils.CloseUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;

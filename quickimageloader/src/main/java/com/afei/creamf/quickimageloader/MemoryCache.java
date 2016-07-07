@@ -1,9 +1,10 @@
-package com.afei.creamf.imageloader.ImageDetails;
+package com.afei.creamf.quickimageloader;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;
 
-import com.afei.creamf.imageloader.ImageDetails.Interface.ImageCache;
+import com.afei.creamf.quickimageloader.Interface.ImageCache;
+
 
 /**
  * 图片的内存缓存

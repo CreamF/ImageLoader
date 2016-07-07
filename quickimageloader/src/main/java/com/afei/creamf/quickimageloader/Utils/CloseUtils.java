@@ -1,4 +1,4 @@
-package com.afei.creamf.imageloader.ImageDetails.Utils;
+package com.afei.creamf.quickimageloader.Utils;
 
 import java.io.Closeable;
 import java.io.IOException;

@@ -1,8 +1,9 @@
-package com.afei.creamf.imageloader.ImageDetails;
+package com.afei.creamf.quickimageloader;
 
 import android.graphics.Bitmap;
 
-import com.afei.creamf.imageloader.ImageDetails.Interface.ImageCache;
+import com.afei.creamf.quickimageloader.Interface.ImageCache;
+
 
 /**
  * 双缓存（内存缓存和SD卡缓存）

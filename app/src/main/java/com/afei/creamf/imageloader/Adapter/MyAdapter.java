@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.afei.creamf.imageloader.ImageDetails.DoubleCache;
-import com.afei.creamf.imageloader.ImageDetails.ImageLoader;
 import com.afei.creamf.imageloader.R;
+import com.afei.creamf.quickimageloader.DoubleCache;
+import com.afei.creamf.quickimageloader.ImageLoader;
 
 import java.util.List;
 
