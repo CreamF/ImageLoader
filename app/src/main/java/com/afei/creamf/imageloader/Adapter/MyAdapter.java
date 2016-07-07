@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+import com.afei.creamf.imageloader.ImageDetails.DoubleCache;
 import com.afei.creamf.imageloader.ImageDetails.ImageLoader;
 import com.afei.creamf.imageloader.R;
 
@@ -56,10 +57,8 @@ public class MyAdapter extends BaseAdapter {
             holder = new ViewHolder(view);
             view.setTag(holder);
         }
-//        // 使用双缓存
-//        imageLoader.useDoubleCache(true);
-        // 使用SD卡缓存
-        imageLoader.useDiskCache(true);
+        // 使用双缓存
+        imageLoader.setImageCache(new DoubleCache());
         imageLoader.displayImage(mImgUrl.get(i), holder.iv);
         return view;
     }

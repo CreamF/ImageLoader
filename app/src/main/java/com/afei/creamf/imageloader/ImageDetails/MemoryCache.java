@@ -3,13 +3,15 @@ package com.afei.creamf.imageloader.ImageDetails;
 import android.graphics.Bitmap;
 import android.util.LruCache;
 
+import com.afei.creamf.imageloader.ImageDetails.Interface.ImageCache;
+
 /**
  * 图片的内存缓存
  * Author:AFei
  * Email:wtfaijava@139.com
  * Created By:2016/7/7  9:48
  */
-public class MemoryCache {
+public class MemoryCache implements ImageCache {
     // 图片LRU缓存
     LruCache<String, Bitmap> mImageCache;
 
@@ -33,11 +35,14 @@ public class MemoryCache {
         };
     }
 
+    @Override
+    public void put(String imgUrl, Bitmap bitmap) {
+        mImageCache.put(imgUrl, bitmap);
+    }
+
+    @Override
     public Bitmap get(String imgUrl) {
         return mImageCache.get(imgUrl);
     }
 
-    public void put(String imgUrl, Bitmap bitmap) {
-        mImageCache.put(imgUrl, bitmap);
-    }
 }

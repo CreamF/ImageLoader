@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 
+import com.afei.creamf.imageloader.ImageDetails.Interface.ImageCache;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,12 +17,10 @@ import java.io.IOException;
  * Email:wtfaijava@139.com
  * Created By:2016/7/7  10:13
  */
-public class DiskCache {
+public class DiskCache implements ImageCache {
     static String cacheDir;
-//    Context context;
 
     public DiskCache() {
-//        this.context = context;
         createSDCardDir();
     }
 
@@ -46,9 +46,7 @@ public class DiskCache {
      * 创建不存在的路径
      */
     public void createSDCardDir() {
-        if (getSDPath() == null) {
-//            Toast.makeText(context, "未找到SD卡", Toast.LENGTH_LONG).show();
-        } else {
+        if (getSDPath() != null) {
             if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
                 // 创建一个文件夹对象，赋值为外部存储的目录
                 cacheDir = getSDPath() + "/imageLoader/dir";
@@ -60,22 +58,7 @@ public class DiskCache {
         }
     }
 
-    public Bitmap get(String imgUrl) {
-        String substring = imgUrl.substring(imgUrl.lastIndexOf("/"));
-//        File file = new File(cacheDir + "/" + substring + ".png");
-//
-        Bitmap bitmap = null;
-//        if (!file.exists()) {
-//            file.mkdirs();
-//        } else {
-        bitmap = BitmapFactory.decodeFile(cacheDir + "/" + substring + ".png");
-
-//        }
-        return bitmap;
-
-    }
-
-    // 将图片缓存到内存中
+    @Override
     public void put(String imgUrl, Bitmap bitmap) {
         FileOutputStream fos = null;
         try {
@@ -99,4 +82,11 @@ public class DiskCache {
             }
         }
     }
+
+    @Override
+    public Bitmap get(String imgUrl) {
+        String substring = imgUrl.substring(imgUrl.lastIndexOf("/"));
+        return BitmapFactory.decodeFile(cacheDir + "/" + substring + ".png");
+    }
+
 }
