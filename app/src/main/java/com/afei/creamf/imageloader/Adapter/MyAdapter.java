@@ -56,8 +56,11 @@ public class MyAdapter extends BaseAdapter {
             holder = new ViewHolder(view);
             view.setTag(holder);
         }
-
-        imageLoader.displayImage(mImgUrl.get(i),holder.iv);
+//        // 使用双缓存
+//        imageLoader.useDoubleCache(true);
+        // 使用SD卡缓存
+        imageLoader.useDiskCache(true);
+        imageLoader.displayImage(mImgUrl.get(i), holder.iv);
         return view;
     }
 

@@ -9,11 +9,11 @@ import android.util.LruCache;
  * Email:wtfaijava@139.com
  * Created By:2016/7/7  9:48
  */
-public class ImageCache {
+public class MemoryCache {
     // 图片LRU缓存
     LruCache<String, Bitmap> mImageCache;
 
-    public ImageCache() {
+    public MemoryCache() {
         initImageCache();
     }
 
