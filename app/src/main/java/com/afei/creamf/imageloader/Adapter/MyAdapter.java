@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.afei.creamf.imageloader.ImageLoader;
+import com.afei.creamf.imageloader.ImageDetails.ImageLoader;
 import com.afei.creamf.imageloader.R;
 
 import java.util.List;
