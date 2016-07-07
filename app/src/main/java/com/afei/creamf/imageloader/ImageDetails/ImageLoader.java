@@ -17,12 +17,12 @@ import java.util.concurrent.Executors;
  * Email:wtfaijava@139.com
  */
 public class ImageLoader {
-    // 图片缓存
+    // 图片缓存，依赖于抽象，有一个默认实现
     ImageCache imageCache = new MemoryCache();
     // 线程池：线程数量为CPU的数量
     ExecutorService mExecutorServer = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-    // 注入缓存实现
+    // 注入缓存实现（依赖于抽象而不依赖与具体实现）
     public void setImageCache(ImageCache imageCache) {
         this.imageCache = imageCache;
     }

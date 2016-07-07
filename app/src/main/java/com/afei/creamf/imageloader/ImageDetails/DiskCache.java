@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 
 import com.afei.creamf.imageloader.ImageDetails.Interface.ImageCache;
+import com.afei.creamf.imageloader.ImageDetails.Utils.CloseUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -73,13 +74,7 @@ public class DiskCache implements ImageCache {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (fos != null) {
-                try {
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            CloseUtils.closeQuietly(fos);
         }
     }
 
